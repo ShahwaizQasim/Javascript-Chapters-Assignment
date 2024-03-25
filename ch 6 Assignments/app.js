@@ -26,4 +26,66 @@ let b = 1;
 --a - --b + ++b;
 document.write("a is = " + a + "<br/>");
 document.write("b is = " + b + "<br/>");
-//--a - --b | || b | b--; 
+//--a - --b | || b | b--;
+
+/* Question 3 */
+let name = document.querySelector("#name");
+let user_message = document.querySelector("#message");
+let button = document.querySelector("#button1");
+
+button.addEventListener("click", () => {
+  let user_name = name.value;
+  //console.log(user_name);
+
+  if (user_name) {
+    user_message.innerHTML = user_name;
+    // console.log(user_name);
+  } else {
+    user_message.innerText = "Please Enter Your Correct Name";
+  }
+});
+
+/* Question 4,5 */
+let table = document.querySelector("#table");
+let print_table = document.querySelector("#table_print");
+let button2 = document.querySelector("#button2");
+
+button2.addEventListener("click", () => {
+  let user_table = table.value;
+  for (let i = 1; i <= 10; i++) {
+    print_table.innerHTML +=
+      user_table +
+      " " +
+      "x" +
+      " " +
+      i +
+      " " +
+      "=" +
+      " " +
+      user_table * i +
+      "<br/>";
+  }
+});
+
+/* Question 6 */
+let physics = document.querySelector("#physics");
+let math = document.querySelector("#math");
+let computer = document.querySelector("#computer");
+let mark_print = document.querySelector("#marks_print");
+let button3 = document.querySelector("#button3");
+
+button3.addEventListener("click", () => {
+  let user_physics = Number(physics.value);
+  // if (user_physics > 100) {
+  //   alert("Not Allow");
+  // }
+  let user_math = Number(math.value);
+  let user_computer = Number(computer.value);
+  let obtain_marks = Number(user_physics + user_math + user_computer);
+  let total_marks = 300;
+  let percentage = (obtain_marks / total_marks) * 100;
+
+  if (percentage >= 80) {
+    mark_print.innerHTML = percentage + "Congratulation ! Your Grade is A+";
+  }
+});
