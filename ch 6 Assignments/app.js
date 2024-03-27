@@ -76,16 +76,33 @@ let button3 = document.querySelector("#button3");
 
 button3.addEventListener("click", () => {
   let user_physics = Number(physics.value);
-  // if (user_physics > 100) {
-  //   alert("Not Allow");
-  // }
+  /* agr user 100 se zyada number daly tw alert show hoga */
+  if (user_physics > 100) {
+    alert("Not Allow because Physics Total Marks is 100");
+  }
   let user_math = Number(math.value);
+  /* agr user 100 se zyada number daly tw alert show hoga */
+  if (user_math > 100) {
+    alert("Not Allow because Math Total Marks is 100");
+  }
   let user_computer = Number(computer.value);
+  /* agr user 100 se zyada number daly tw alert show hoga */
+  if (user_computer > 100) {
+    alert("Not Allow because Computer Total Marks is 100");
+  }
   let obtain_marks = Number(user_physics + user_math + user_computer);
   let total_marks = 300;
   let percentage = (obtain_marks / total_marks) * 100;
 
   if (percentage >= 80) {
-    mark_print.innerHTML = percentage + "Congratulation ! Your Grade is A+";
+    mark_print.innerHTML = percentage + " Congratulation ! Your Grade is A+";
+  } else if (percentage >= 70) {
+    mark_print.innerHTML = percentage + " Congratulation ! Your Grade is A";
+  } else if (percentage >= 60) {
+    mark_print.innerHTML = percentage + " Your Grade is B";
+  } else if (percentage >= 50) {
+    mark_print.innerHTML = percentage + " Your Grade is C";
+  } else {
+    mark_print.innerHTML = percentage + " Sorry You are Fail";
   }
 });
