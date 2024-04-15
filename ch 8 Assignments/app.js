@@ -107,13 +107,13 @@
 
 let user_time = prompt("Enter Your Time");
 
-if (user_time >= "5am" || user_time <= "11:59am"){
+if (user_time >= "5am" || user_time < "12:00pm"){
     alert(`Good Morning! Time is ${user_time}`);    
-} else if(user_time >= "12pm" || user_time <= "3:59pm" ){
+} else if(user_time >= "12pm" || user_time < "4:00pm" ){
     alert(`Good Afternoon! Time is ${user_time}`);    
-} else if(user_time >= "4pm" || user_time <= "9:59pm"){
+} else if(user_time >= "4pm" || user_time < "10:00pm"){
     alert(`Good Evening! Time is ${user_time}`); 
-}else if(user_time >= "10pm" || user_time <= "4am"){
+}else if(user_time >= "10pm" || user_time < "5am"){
     alert(`Good Night! Time is ${user_time}`);
 }else{
     alert("Incorrect Time! Please Enter Time with am and pm");
